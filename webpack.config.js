@@ -1,7 +1,9 @@
-const path = require("path")
-const webpack = require('webpack')
+const path = require("path");
+const webpack = require('webpack');
 
 module.exports = {
+
+
     entry: {
         app: './index.jsx',
     },
@@ -13,7 +15,10 @@ module.exports = {
     },
     devtool: 'source-map',
     devServer: {
-        port: 3000
+        port: 3000,
+        historyApiFallback: {
+            index: 'index.html'
+        }
     },
     resolve : {
         modules : [ ` ${__dirname} /static_src` , 'node_modules' ] ,
