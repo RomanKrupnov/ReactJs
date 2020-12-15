@@ -1,34 +1,32 @@
+
 body {
-    min-height: 100vh;
+    min-height: 1vh;
     scroll-behavior: smooth;
     text-rendering: optimizeSpeed;
     line-height: 1.5;
+    margin-top: 1px;
 }
-
-.body {
-    display: flex;
-    height: 500px;
-}
-
 .message-field {
     display: flex;
     flex-direction: column;
     background-color: #e2e2e2;
-    height: 50%;
-    width: 70%;
+    height: 500px;
+    width: 90%;
     overflow-y: scroll;
 }
 
 .layout {
     height: 100%;
-    width: 100%;
-    margin: auto;
+    width: 80%;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
 }
-
+.layout-canvas{
+    width: 100%;
+    display: flex;
+}
 .message {
     background-color: lightblue;
     padding: 5px 15px;
@@ -58,9 +56,15 @@ body {
     display: flex;
     flex-direction: column;
     background-color: lightgrey;
-    height: 100%;
-    width: 30%;
-    padding: 20px;
+    }
+.layout-right-side{
+    width: 800px;
+    height: 300px;
+}
+.layout-left-side{
+    width: 400px;
+    height: 300px;
+    background-color: lightgrey;
 }
 
 .input {
