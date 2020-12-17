@@ -1,7 +1,6 @@
 import update from 'react-addons-update';
 import { SEND_MESSAGE } from '../components/actions/messageActions';
 import { ADD_CHAT } from "../components/actions/chatActions";
-
 const initialStore = {
     chats: {
         1: {title: 'Чат 1', messageList: [1]},
@@ -9,8 +8,6 @@ const initialStore = {
         3: {title: 'Чат 3', messageList: [3]},
     },
 };
-
-
 export default function chatReducer(store = initialStore, action) {
     switch (action.type) {
         case SEND_MESSAGE: {

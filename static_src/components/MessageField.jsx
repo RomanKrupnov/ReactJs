@@ -6,7 +6,6 @@ import Message from './Message';
 import './styles/styles.css';
 import { bindActionCreators } from "redux";
 import connect from "react-redux/es/connect/connect";
-
 class MessageField extends React.Component {
   static propTypes = {
     chatId: PropTypes.number.isRequired,
@@ -14,11 +13,9 @@ class MessageField extends React.Component {
     chats: PropTypes.object.isRequired,
     sendMessage: PropTypes.func.isRequired,
   };
-
   state = {
     input: '',
   };
-
   handleSendMessage = (message, sender) => {
     if (this.state.input.length > 0 || sender === 'bot') {
       this.props.sendMessage(message, sender);
@@ -27,7 +24,6 @@ class MessageField extends React.Component {
       this.setState({ input: '' });
     }
   };
-
   handleChange = (event) => {
     this.setState({ [event.target.name]: event.target.value });
   };
@@ -37,7 +33,6 @@ class MessageField extends React.Component {
       this.handleSendMessage(this.state.input, 'me');
     }
   };
-
   render() {
     const { chatId, messages, chats } = this.props;
 
@@ -47,7 +42,6 @@ class MessageField extends React.Component {
             text={ messages[messageId].text }
             sender={ messages[messageId].sender }
         />));
-
     return [
       <div key='messageElements' className="message-field">
         { messageElements }
@@ -73,7 +67,5 @@ class MessageField extends React.Component {
 const mapStateToProps = ({ chatReducer }) => ({
   chats: chatReducer.chats,
 });
-
 const mapDispatchToProps = dispatch => bindActionCreators({}, dispatch);
-
 export default connect(mapStateToProps, mapDispatchToProps)(MessageField);

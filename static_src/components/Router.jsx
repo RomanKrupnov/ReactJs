@@ -1,8 +1,6 @@
 import React from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom'
 import App from './Layout';
-
-
 export default class Router extends React.Component {
     render() {
         return (

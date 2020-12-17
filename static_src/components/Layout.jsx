@@ -45,8 +45,6 @@ class Layout extends React.Component {
         });
         this.props.sendMessage(messageId, message, sender, chatId);
     };
-
-
     render() {
         return (
             <div className="layout">
@@ -67,9 +65,6 @@ class Layout extends React.Component {
         )
     }
 }
-
 const mapStateToProps = ({}) => ({});
-
 const mapDispatchToProps = dispatch => bindActionCreators({ sendMessage }, dispatch);
-
 export default connect(mapStateToProps, mapDispatchToProps)(Layout);
