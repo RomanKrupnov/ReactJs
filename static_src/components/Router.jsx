@@ -2,6 +2,11 @@ import React from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom'
 import App from './Layout';
 import Profile from "./profile/Profile";
+const NoMatchPage = () => {
+    return(
+        <h3>404 - Not Found</h3>
+    );
+};
 export default class Router extends React.Component {
     render() {
         return (
@@ -11,9 +16,10 @@ export default class Router extends React.Component {
                     />
                     }
                 />
-                <Route exact path='/profile/' render={() => <Profile /> }
-                />
-                <Redirect to={'/'}/>
+                <Route exact ={true}
+                       path='/profile/'
+                       component={ Profile } />
+                <Route component={NoMatchPage}/>
             </Switch>
 
         )
